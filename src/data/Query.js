@@ -1,15 +1,24 @@
-const githubQuery = {
+const githubQuery = (
+  pageCount,
+  queryString,
+  paginationKeyword,
+  paginationString
+) => {
+  return {
     query: `
     {
-        viewer {
-          name
-        }
-        search(query: "user:whoinlee sort:updated-desc", type: REPOSITORY, first: 10) {
-          nodes {
+      viewer {
+        name
+      }
+      search(query: "${queryString} user:planetoftheweb sort:updated-desc", type: REPOSITORY, ${paginationKeyword}: ${pageCount}, ${paginationString}) {
+        repositoryCount
+        edges {
+          cursor
+          node {
             ... on Repository {
               name
-              id
               description
+              id
               url
               viewerSubscription
               licenseInfo {
@@ -18,47 +27,16 @@ const githubQuery = {
             }
           }
         }
+        pageInfo {
+          startCursor
+          endCursor
+          hasNextPage
+          hasPreviousPage
+        }
+      }
     }
-    `
+  `,
   };
+};
 
-  
-//#1.
-    // {
-    //   viewer {
-    //     name
-    //   }
-    // }
-
-//#2.
-    // {
-    //     viewer {
-    //     name
-    //     repositories(first: 10) {
-    //         nodes {
-    //         name
-    //         description
-    //         id
-    //         url
-    //         }
-    //     }
-    //     }
-    // }
-
-//#3.
-    // {
-    //     viewer {
-    //       name
-    //       repositories(first: 10) {
-    //         nodes {
-    //           name
-    //           description
-    //           id
-    //           url
-    //         }
-    //       }
-    //     }
-    // }
-
-
-  export default githubQuery;
+export default githubQuery;
