@@ -10,7 +10,7 @@ const github = {
     username: [username],
     headers: {
         "Content-Type": "application/json",
-        Authorization: "bearer [hidden token...]"
+        Authorization: "bearer [access token]"
     }
 };
 */
