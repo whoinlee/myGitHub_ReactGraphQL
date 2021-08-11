@@ -1,0 +1,8 @@
+// in the ~/bootstrap/scss/_variable.scss
+// $blue:    #0d6efd !default;
+// $primary: $blue !default;
+// ===> changed to
+$primary: #6f42c1;
+//
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
