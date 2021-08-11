@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 //
-import github from './db';
-import query from './Query';
+import github from './data/db';
+import query from './data/Query';
 //
 //-- Components
 import RepoInfo from './components/RepoInfo';
