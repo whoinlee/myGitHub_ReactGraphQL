@@ -1,5 +1,3 @@
-// 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
-
 const github = {
     baseURL: "https://api.github.com/graphql",
     username: "whoinlee",

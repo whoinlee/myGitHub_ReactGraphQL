@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react';
+//-- Components
+import RepoInfo from './components/RepoInfo';
 //
 import github from './data/db';
 import query from './data/Query';
-//
-//-- Components
-import RepoInfo from './components/RepoInfo';
+/*
+const github = {
+    baseURL: "https://api.github.com/graphql",
+    username: [username],
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: "bearer [hidden token...]"
+    }
+};
+*/
 
 
 function App() {
